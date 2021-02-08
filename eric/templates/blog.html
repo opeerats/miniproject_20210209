@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    {% if name == '도연' %}
+    <h1>도연님 안녕하세요?</h1>
+    {% elif name == '미정' %}
+    <h1>미정님 안녕하세요?</h1>
+    {% else %}
+    {{age}}살 {{name}}님 {{message}}
+    {% endif %}
+  </h1>
+  <ul>
+    {% for number in numbers %}
+      <li>
+        {{ number }}
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

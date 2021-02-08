@@ -1,0 +1,7 @@
+pip install flask
+플라스크 공식문서 참고
+
+flask run
+http://127.0.0.1:5000
+
+python app.py
