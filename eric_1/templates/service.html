@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>아무거나</title>
+</head>
+<body>
+  <!-- 이하 nav -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <!-- navbar 예시를 가져와서 배경과 글씨의 색상을 바꿨다 -->
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="home.html">cire</a>
+      <!-- logo이미지의 크기는 10rem으로 고정 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <!--  메뉴들 오른쪽으로 가도록 justify-content-end -->
+        <!-- d-flex까지하면 햄버거의 메뉴들이 오른쪽으로 정렬 -->
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <!-- me-auto를 없애서 오른쪽으로 가도록 -->
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+            <!-- 홈에는 강조, 각 href에 링크 삽입 -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service_intro.html">service_intro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="service.html">service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- 까지 nav --> 
+
+
+  <!-- container -->
+
+
+  <section class="position-absolute top-50 start-50 translate-middle w-100 h-75 ">
+    <div class="row h-100">
+      <div class="col-sm-2"></div>
+
+      <div class="col-sm-8 h-100 position-relative" style="background-color: #b2c7d9">
+        <div>
+          친구얼굴 
+        </div>
+        <div style="position: relative; width: 30%;">
+          <div style="vertical-align: middle;">
+            <img style="width: 100%; height: 30%;" src="static/images/pngegg.png" alt="pngegg.png">
+          </div>
+          
+          <div style="text-align: center; position: absolute; top: 60%; left: 50%; transform: translate( -50%, 0% );">
+            {{random_menu}}
+          </div>
+        </div>
+        {% if random_menu == '뭐 먹을래?' %}
+            
+        {% else %}
+        <iframe style="width: 90%; height: 70%;"
+        src="https://shoppinghow.kakao.com/search/{{ random_menu }}" frameborder="1"></iframe>
+        {% endif %}
+
+
+        <div class="position-absolute bottom-0 start-50 translate-middle-x w-100">
+          <div >
+            <div style="vertical-align: middle w-100;">
+              <img class="w-100" src="static/images/talk.png" alt="talk.png">
+            </div>
+            
+            <div style="text-align: center; position: absolute; top: 20%; left: 40%; transform: translate( -50%, 0% ); width: 50%; height: 100%;">
+              <div class="d-grid gap-2 h-50">
+                <div class="d-grid gap-2 col-12 mx-auto h-100">
+                  <!-- <button class="btn btn-primary h-100" type="button" href="{{url_for('service', 선택='아무거나')}}">아무거나</button> -->
+                  <a href="{{url_for('service', 선택='아무거나')}}">
+  
+                    아무거나
+                  </a>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        
+
+        <!-- <div class="position-absolute bottom-0 start-50 translate-middle-x w-100">
+          <img class="w-100" src="static/images/talk.png" alt="fwf"> -->
+          <!-- <div style="position: relative; left: 5vw; top: -9vh;">아무거나</div>
+          <div style="position: relative; left: 30vw; top: -11vh;">2</div> -->
+        </div>
+      </div>
+
+      <div class="col-sm-2"></div>
+    </div> 
+  </section>
+  
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
